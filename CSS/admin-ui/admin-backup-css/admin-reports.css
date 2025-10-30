@@ -1,0 +1,381 @@
+/* Report */
+:root {
+  --color-primary: #F5E3CD;
+  --color-secondary: #FEF3E7;
+  --color-secondary2: #fcf7f2;
+  --color-tertiary: #9E5B08;
+  --color-text: #703803;
+  --color-text2: #502803;
+}
+
+.admin-inventory-report-container {
+  padding: 15px 10px 20px 30px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.admin-inventory-report {
+  display: flex;
+  flex-direction: column;
+}
+
+.inventory-report-icon {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  color: var(--color-text);
+}
+
+.inventory-report-icon i {
+  font-size: 1.8rem;
+}
+
+.inventory-report-wrapper {
+  border: 1px solid #50280354;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, .2);
+  padding: 1rem;
+}
+
+.inventory-report-cards {
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .2);
+  width: 100%;
+  height: 100%;
+}
+
+.report-overview {
+  color: var(--color-text);
+}
+
+.report-overview h3 {
+  font-size: 1.2rem
+}
+
+.report-box-container {
+  display: flex;
+  flex-direction: row;
+  padding: 1.2rem;
+  width: 100%;
+  height: 120px;
+  border: 1px solid #5028032c;
+  border-radius: 5px;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.report-box-container:hover {
+  background-color: var(--color-secondary);
+  transform: scale(1.01);
+}
+
+.box-container-i {
+  text-align: center;
+  font-size: 1.4rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 50px;
+  background-color: var(--color-primary);
+
+}
+
+.box-container-title {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+  gap: .3rem;
+}
+
+.box-container-title h3 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.report-overview {
+  display: flex;
+  flex-direction: column;
+}
+
+.report-overview canvas {
+  width: 80px;
+  height: 80px;
+}
+
+
+
+.weekly-report-container {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 2rem;
+
+}
+
+.inventory-report-section {
+  width: 200px;
+  border: 1px solid #50280379;
+  background-color: var(--color-secondary, #eee);
+  cursor: pointer;
+  text-align: center;
+  padding: 0.6rem;
+  color: var(--color-text, #333);
+  position: relative;
+  user-select: none;
+}
+
+.inventory-dropdown-section {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Hide dropdown initially */
+.report-dropdown {
+  display: none;
+  list-style: none;
+  z-index: 1000;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid var(--color-text, #333);
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/* Dropdown item styling */
+.report-dropdown li a {
+  display: block;
+  padding: 8px 12px;
+  color: var(--color-text, #333);
+  text-decoration: none;
+  text-align: start;
+}
+
+.report-dropdown li a:hover {
+  background-color: var(--color-secondary, #eee);
+}
+
+/* Show dropdown when active */
+.inventory-report-section.active .report-dropdown {
+  display: block;
+}
+
+
+
+
+.most-used-item-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 40px;
+  border: 1px solid #5028034f;
+  margin-top: 1%;
+  margin-bottom: 1rem;
+}
+
+.most-used-item-wrapper p {
+  margin: 0;
+  font-size: .8rem;
+  white-space: nowrap;
+  color: var(--color-text);
+}
+
+
+/* Remove header borders */
+.inventory-report-wrapper {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  
+}
+
+.inventory-report-container {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 300px;
+  position: relative;
+  background-color: white;
+  border: 1px solid #502c006c;
+  scroll-behavior: smooth;
+}
+
+.admin-inventory-report-table thead th {
+  position: sticky;
+  top: 0;
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  font-weight: 600;
+  padding: 1rem;
+  z-index: 2;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style only the data cells */
+.admin-inventory-report-table tbody td {
+  color: var(--color-text);
+  padding: 1.2rem;
+  background-color: var(--color-bg, #fff);
+  white-space: normal;
+  word-break: break-word;
+
+}
+
+.admin-inventory-report-table tbody {
+  border-radius: 2rem;
+}
+
+.admin-inventory-report-table {
+  table-layout: fixed;
+  border-spacing: 0 10px;
+  overflow: auto;
+  width: 100%;
+  border-collapse: collapse;
+  word-wrap: break-word;
+  word-break: break-word;
+  margin-bottom: 0%;
+}
+
+.admin-inventory-report-table thead th i {
+  font-size: 12px;
+}
+
+.admin-inventory-report-table thead th:last-child,
+.admin-inventory-report-table tbody td:last-child {
+  border-right: none !important;
+}
+
+.admin-inventory-report-table thead th:first-child,
+.admin-inventory-report-table tbody td:first-child {
+  border-left: none !important;
+}
+
+.admin-inventory-report-table thead th {
+  border-top: none !important;
+}
+
+.admin-inventory-report-table tbody tr:last-child td {
+  border-bottom: none !important;
+}
+
+.admin-inventory-report-table::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.admin-inventory-report-table::-webkit-scrollbar-thumb {
+  background: #b88b4a;
+  border-radius: 8px;
+}
+
+.admin-inventory-report-table::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+
+/* Donut table for appointment */
+.appointment-report-wrapper {
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, .2);
+  border-radius: 15px;
+  background-color: var(--color-secondary);
+  border: 1px solid #50280333;
+}
+
+.percentage-wrapper {
+  width: 100%;
+  border: 1px solid #5028032f;
+  padding: .2rem;
+
+}
+
+.appointment-report-title {
+  text-align: center;
+  color: var(--color-text);
+  margin-top: 2rem;
+}
+
+.appointment-report-title h3 {
+  font-size: 1rem;
+}
+
+.percentage-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.percentage-color {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.percentage-color i {
+  font-size: .8rem;
+}
+
+.percentage-title {
+  font-size: .8rem;
+  text-align: center;
+
+  padding-left: .5rem;
+}
+
+.percentage-num {
+  font-size: .8rem;
+}
+
+.appointment-report-container {
+  width: 100%;
+}
+
+.appointment-report-container canvas {
+  width: 200px;
+  height: 200px;
+}
+
+/* Revenue Graph */
+.revenue-graph-wrapper {
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, .2);
+  color: var(--color-text);
+  border: 1px solid #5028034f;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.revenue-graph-container {
+  width: 100%;
+  height: 400px;
+}
+
+
+.inventory-report-chart {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .2);
+
+}
+
+.inventory-report-chart-title {
+  text-align: center;
+  color: var(--color-text);
+}

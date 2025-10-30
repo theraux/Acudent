@@ -1,0 +1,233 @@
+:root {
+    --color-primary: #F5E3CD;
+    --color-secondary: #FEF3E7;
+    --color-secondary2: #fcf7f2;
+    --color-tertiary: #9E5B08;
+    --color-text: #703803;
+    --color-text2: #502803;
+}
+
+.appointment-report-main-container {
+    padding: 15px 10px 20px 30px;
+    width: 100%;
+    height: 100%;
+}
+
+.appointment-report-container-box {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-secondary2);
+}
+
+.appointment-report-overview h3 {
+    font-size: 1rem;
+    color: var(--color-text);
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.appointment-report-box-wrapper {
+    border: 1px solid #5028036c;
+    border-radius: 10px;
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    display: flex;
+}
+
+.appointment-report-box-wrapper:hover {
+    background-color: var(--color-secondary);
+    transform: scale(1.01);
+}
+
+.appointment-report-icon {
+    display: flex;
+    align-items: center;
+    /* vertically center icon and text */
+    gap: 1rem;
+    /* space between icon and text */
+}
+
+.appointment-report-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #5028031a;
+    /* optional background */
+    color: var(--color-text);
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.appointment-report-box-title {
+    justify-items: center;
+    justify-content: center;
+    padding-top: 1rem;
+}
+
+.appointment-report-box-title h4 {
+    color: var(--color-text);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.appointment-report-box-title h3 {
+    color: var(--color-text);
+    font-size: .9rem;
+}
+
+.appointment-report-box-title p {
+    font-size: .8rem;
+    color: var(--color-text);
+}
+
+.appointment-report-view-detail button {
+    border: none;
+    font-size: .8rem;
+    color: var(--color-text);
+}
+
+/* ==============================
+   Appointment Report (same as Financial Report)
+   ============================== */
+
+
+.appointment-service-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: 60vh;
+    position: relative;
+    background-color: white;
+    border: 1px solid #502c006c;
+    scroll-behavior: smooth;
+}
+
+/* Scrollbar styling */
+.appointment-service-table-wrapper::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.appointment-service-table-wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 6px;
+    padding-top: 1px;
+}
+
+.appointment-service-table-wrapper::-webkit-scrollbar-thumb {
+    background: #b88b4a;
+    border-radius: 6px;
+}
+
+.appointment-service-table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #946b36;
+}
+
+/* Table */
+.appointmet-service-table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 100px;
+    font-size: .90rem;
+    table-layout: fixed;
+}
+
+.appointmet-service-table thead th {
+    position: sticky;
+    top: 0;
+    background-color: var(--color-secondary);
+    color: var(--color-text);
+    font-weight: 600;
+    padding: 1rem;
+    z-index: 2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.appointmet-service-table tbody td {
+    color: var(--color-text);
+    padding: 1.2rem;
+    background-color: var(--color-bg, #fff);
+}
+
+.appointmet-service-table tbody th,
+.appointmet-service-table tbody td {
+    border: 1px solid #502c003f;
+    text-align: left;
+}
+
+.appointmet-service-table tbody th:first-child,
+.appointmet-service-table td:first-child {
+    border-left: none;
+}
+
+.appointmet-service-table tbody th:last-child,
+.appointmet-service-table tbody td:last-child {
+    border-right: none;
+}
+
+.appointmet-service-table thead th {
+    border-top: none;
+}
+
+.appointmet-service-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* ==============================
+   Appointment Graph (same as Financial Graph)
+   ============================== */
+.appointment-report-graph-container {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.appointment-graph-wrapper {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #502c003f;
+    display: flex;
+    flex-direction: column;
+    height: 463px;
+    margin: 0;
+}
+
+.appointment-report-graph-title h3 {
+    font-size: 1rem;
+    color: var(--color-text);
+}
+
+.appointment-report-graph-p p {
+    font-size: 0.8rem;
+    color: var(--color-text);
+}
+
+
+.appointment-report-graph-wrapper canvas {
+    max-height: 500px;
+}
+
+/* ==============================
+   Responsive Adjustments
+   ============================== */
+@media (max-width: 992px) {
+
+    .appointment-service-table-container,
+    .appointment-report-graph-container {
+        margin-bottom: 1rem;
+    }
+
+    .appointment-service-table-wrapper {
+        height: 300px;
+    }
+
+    .appointment-report-graph-wrapper canvas {
+        max-width: 300px;
+    }
+}
