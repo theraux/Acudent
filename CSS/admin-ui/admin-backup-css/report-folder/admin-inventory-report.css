@@ -31,13 +31,12 @@
     width: 100%;
     height: 100%;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    background-color: var(--color-secondary2);
     border-radius: 10px;
 }
 
 /* Each box wrapper (Most Used / Least Used) */
 .inventory-report-box-wrapper {
-    border: 1px solid #0644206c; /* darker green tone */
+    border: 1px solid #5028036c;
     border-radius: 10px;
     padding: 1rem;
     width: 100%;
@@ -97,19 +96,9 @@
     white-space: normal;
     overflow-wrap: break-word;
     word-break: break-all;
-    margin-left: 0.8rem;
 }
 
-.inventory-report-list ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
 
-.inventory-report-list li {
-    font-size: 0.9rem;
-    line-height: 1.3;
-}
 
 /* Donut chart container (right side) */
 .inventory-report-metrics {
@@ -124,7 +113,6 @@
     max-width: 160px;
     max-height: 160px;
 }
-
 /* Optional: hover effect for interactivity */
 .inventory-report-box-wrapper:hover {
     background-color: rgba(0, 0, 0, 0.02);
