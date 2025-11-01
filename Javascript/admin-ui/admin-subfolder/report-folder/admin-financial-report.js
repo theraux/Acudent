@@ -264,7 +264,6 @@ if (financialCtx) {
     ],
   };
 
-  
 
   // Show modal when clicking "View Detail"
   viewButtons.forEach(btn => {
