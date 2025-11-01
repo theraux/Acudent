@@ -16,24 +16,24 @@
 
     <div class="used-item-container mt-3">
 
-   <div class="financial-report-overview">
+   <div class="inventory-report-overview">
     <h3>Overview</h3>
 </div>
 
-<div class="row row-cols-xxl-2 row-cols-xl-2 row-cols-lg-1 row-cols-md-1 row-cols-sm-1 row-cols-1 p-2">
+<div class="row row-cols-xxl-2 row-cols-xl-2 row-cols-lg-1 row-cols-md-1 row-cols-sm-1 row-cols-1 p-2 gy-3">
     <!-- Most Used Item -->
     <div class="col-xxl-6 col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
-        <div class="financial-report-box-wrapper">
-            <div class="financial-report-title">
+        <div class="inventory-report-box-wrapper">
+            <div class="inventory-report-title">
                 <h3>Most Used Item</h3>
             </div>
 
-            <div class="financial-report-box">
-                <div class="financial-report-icon">
-                    <div class="financial-report-icon-container">
+            <div class="inventory-report-box">
+                <div class="inventory-report-icon">
+                    <div class="inventory-report-icon-container">
                         <i class="fa-solid fa-boxes-stacked"></i>
                     </div>
-                    <div class="financial-report-list">
+                    <div class="inventory-report-list">
                         <ul class="report-list" id="most-used-item-list-id">
                             <li>Rubber</li>
                             <li>Gloves</li>
@@ -42,7 +42,7 @@
                     </div>
                 </div>
 
-                <div class="financial-report-metrics ms-auto">
+                <div class="inventory-report-metrics ms-auto">
                     <canvas id="most-used-item-donut-id"></canvas>
                 </div>
             </div>
@@ -51,17 +51,17 @@
 
     <!-- Least Used Item -->
     <div class="col-xxl-6 col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
-        <div class="financial-report-box-wrapper">
-            <div class="financial-report-title">
+        <div class="inventory-report-box-wrapper">
+            <div class="inventory-report-title">
                 <h3>Least Used Item</h3>
             </div>
 
-            <div class="financial-report-box">
-                <div class="financial-report-icon">
-                    <div class="financial-report-icon-container">
+            <div class="inventory-report-box">
+                <div class="inventory-report-icon">
+                    <div class="inventory-report-icon-container">
                         <i class="fa-solid fa-box-open"></i>
                     </div>
-                    <div class="financial-report-list">
+                    <div class="inventory-report-list">
                         <ul class="report-list" id="least-used-item-list-id">
                             <li>Anesthesia</li>
                             <li>Cotton</li>
@@ -70,7 +70,7 @@
                     </div>
                 </div>
 
-                <div class="financial-report-metrics ms-auto">
+                <div class="inventory-report-metrics ms-auto">
                     <canvas id="least-used-item-donut-id"></canvas>
                 </div>
             </div>
@@ -144,6 +144,14 @@
                     <p>Here’s your inventory snapshot—check out how the numbers <br>
                         drill down and fill up as we keep everything in perfect order!</p>
                 </div>
+                <div class="month-selector">
+                            <label for="month-select">Select Month:</label>
+                            <select id="month-select">
+                                <option value="2023-09">September 2023 (Last Month)</option>
+                                <option value="2023-10" selected>October 2023 (Current Month)</option>
+                                <!-- Add more options as needed -->
+                            </select>
+                        </div>
             </div>
             <div class="inventory-report-graph-container">
                 <canvas id="revenue-report-graph-id"></canvas>

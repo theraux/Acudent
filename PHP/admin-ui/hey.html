@@ -31,7 +31,9 @@
                             <p>This month</p>
                         </div>
                         <div class="appointment-report-view-detail d-flex ms-auto">
-                            <button type="button">View</button>
+                            <button type="button" class="view-btn"
+                                data-target="#appointment-modal-container-id"
+                                data-category="completed">View</button>
                         </div>
                     </div>
                 </div>
@@ -48,7 +50,8 @@
                             <p>This month</p>
                         </div>
                         <div class="appointment-report-view-detail d-flex ms-auto">
-                            <button type="button">View</button>
+                            <button type="button" class="view-btn" data-category="no-show"
+                                data-target="#appointment-modal-container-id">View</button>
                         </div>
                     </div>
                 </div>
@@ -65,7 +68,8 @@
                             <p>This month</p>
                         </div>
                         <div class="appointment-report-view-detail d-flex ms-auto">
-                            <button type="button">View</button>
+                            <button type="button" class="view-btn" data-category="cancelled"
+                                data-target="#appointment-modal-container-id">View</button>
                         </div>
                     </div>
                 </div>
@@ -117,34 +121,30 @@
                                 </tr>
                             </thead>
                             <tbody id="appointment-service-body"></tbody>
-                            <tr>
-                                <td rowspan="2">Periodontics</td>
-                                <td>Oral Prophylaxis</td>
-                                <td>12</td>
-                            </tr>
                         </table>
                     </div>
                 </div>
             </div>
             <div class="col-xxl-6 col-xl-6 col-lg-12 col-md-12 col-sm-12">
-                <div class="appointment-report-graph-container ">
+                <div class="appointment-report-graph-container">
                     <div class="appointment-graph-wrapper">
-                        <div class="appointment-report-graph-title">
+                        <div class="appointment-report-graph-title p-2">
                             <h3>Appointment Report</h3>
                             <div class="appointment-report-graph-p">
                                 <p>Here’s Your appointment Overview—see how the numbers <br>
                                     unfold and grow as we keep your appointments in perfect balance!</p>
                             </div>
+                            <div class="month-selector">
+                                <label for="month-select">Select Month:</label>
+                                <select id="month-select">
+                                    <option value="2023-09">September 2023 (Last Month)</option>
+                                    <option value="2023-10">October 2023 (Current Month)</option>
+                                    <!-- Add more options as needed -->
+                                </select>
+                            </div>
                         </div>
 
-                        <div class="month-selector">
-                            <label for="month-select">Select Month:</label>
-                            <select id="month-select">
-                                <option value="2023-09">September 2023 (Last Month)</option>
-                                <option value="2023-10" selected>October 2023 (Current Month)</option>
-                                <!-- Add more options as needed -->
-                            </select>
-                        </div>
+
 
                         <div class="appointment-report-graph-wrapper">
                             <canvas id="appointment-report-id"></canvas>
@@ -155,3 +155,30 @@
         </div>
     </div>
 </section>
+
+
+<div class="appointment-modal-container" id="appointment-modal-container-id">
+    <div class="appointment-modal-wrapper">
+        <div class="close-modal">
+            <button id="close-modal-btn">&times;</button>
+        </div>
+        <div class="appointment-modal-title">
+            <h3 id="modal-title">Appointment Details</h3>
+        </div>
+        <div class="appointment-modal-table-container">
+            <table id="appointment-modal-table">
+                <thead>
+                    <tr>
+                        <td>Main Category</td>
+                        <td>Subcategory</td>
+                        <td>Name</td>
+                        <td>Patient ID</td>
+                        <td>Dentist</td>
+                        <td>Date</td>
+                    </tr>
+                </thead>
+                <tbody id="appointment-modal-body"></tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -18,7 +18,7 @@
             <h3>Overview</h3>
         </div>
 
-        <div class="row row-cols-xxl-3 row-cols-xl-3 row-cols-lg-1 row-cols-md-1 row-cols-sm-1 row-cols-1 p-2">
+        <div class="row row-cols-xxl-3 row-cols-xl-3 row-cols-lg-1 row-cols-md-1 row-cols-sm-1 row-cols-1 p-2 gy-3">
             <div class="col-xxl-4 col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="financial-report-box-wrapper">
                     <div class="financial-report-title">
@@ -27,7 +27,7 @@
 
                     <div class="financial-report-box">
                         <div class="financial-report-icon">
-                            <div class="financial-report-icon-container">
+                            <div class="financial-report-icon-container bg-success">
                                 <i class="fa-solid fa-ranking-star"></i>
                             </div>
                             <div class="financial-report-list">
@@ -48,12 +48,12 @@
             <div class="col-xxl-4 col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="financial-report-box-wrapper">
                     <div class="financial-report-title">
-                        <h3>Lowest Revenue Service</h3>
+                        <h3>Lowest Revenue Service</h3> 
                     </div>
 
                     <div class="financial-report-box">
                         <div class="financial-report-icon">
-                            <div class="financial-report-icon-container">
+                            <div class="financial-report-icon-container bg-warning">
                                 <i class="fa-solid fa-down-long"></i>
                             </div>
                             <div class="financial-report-list">
@@ -79,7 +79,7 @@
 
                     <div class="financial-report-box">
                         <div class="financial-report-icon">
-                            <div class="financial-report-icon-container">
+                            <div class="financial-report-icon-container bg-info">
                                 <i class="fa-solid fa-address-card"></i>
                             </div>
                             <div class="financial-report-list">

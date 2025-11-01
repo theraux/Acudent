@@ -18,20 +18,21 @@
             <h3>Overview</h3>
         </div>
 
-        <div class="row row-cols-xxl-3 row-cols-xl-3 row-cols-lg-1 row-cols-md-1 row-cols-sm-1 p-2">
+        <div class="row row-cols-xxl-3 row-cols-xl-3 row-cols-lg-1 row-cols-md-1 row-cols-sm-1 p-2 gy-3">
             <div class="col-xxl-4 col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="appointment-report-box-wrapper">
                     <div class="appointment-report-icon">
-                        <div class="appointment-report-icon-container">
-                            <i class="fa-solid fa-check"></i>
+                        <div class="appointment-report-icon-container bg-primary">
+                            <i class="fa-solid fa-calendar"></i>
                         </div>
                         <div class="appointment-report-box-title d-flex flex-column justify-content-start">
                             <h4>Completed Appointments</h4>
-                            <h3>100</h3>
+                            <h3 class="appointment-count" data-category="completed"></h3>
                             <p>This month</p>
                         </div>
                         <div class="appointment-report-view-detail d-flex ms-auto">
-                            <button type="button">View</button>
+                            <button type="button" class="view-btn" data-target="#appointment-modal-container-id"
+                                data-category="completed">View</button>
                         </div>
                     </div>
                 </div>
@@ -39,16 +40,17 @@
             <div class="col-xxl-4 col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="appointment-report-box-wrapper">
                     <div class="appointment-report-icon">
-                        <div class="appointment-report-icon-container">
-                            <i class="fa-solid fa-xmark"></i>
+                        <div class="appointment-report-icon-container" style="background-color: gray">
+                            <i class="fa-solid fa-calendar-minus"></i>
                         </div>
                         <div class="appointment-report-box-title d-flex flex-column justify-content-start">
                             <h4>No Show Appointments</h4>
-                            <h3>5</h3>
+                            <h3 class="appointment-count" data-category="no-show"></h3>
                             <p>This month</p>
                         </div>
                         <div class="appointment-report-view-detail d-flex ms-auto">
-                            <button type="button">View</button>
+                            <button type="button" class="view-btn" data-category="no-show"
+                                data-target="#appointment-modal-container-id">View</button>
                         </div>
                     </div>
                 </div>
@@ -56,16 +58,17 @@
             <div class="col-xxl-4 col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="appointment-report-box-wrapper">
                     <div class="appointment-report-icon">
-                        <div class="appointment-report-icon-container">
-                            <i class="fa-solid fa-ban"></i>
+                        <div class="appointment-report-icon-container bg-danger">
+                            <i class="fa-solid fa-calendar-xmark"></i>
                         </div>
                         <div class="appointment-report-box-title d-flex flex-column justify-content-start">
                             <h4>Cancelled Appointments</h4>
-                            <h3>3</h3>
+                            <h3 class="appointment-count" data-category="cancelled"></h3>
                             <p>This month</p>
                         </div>
                         <div class="appointment-report-view-detail d-flex ms-auto">
-                            <button type="button">View</button>
+                            <button type="button" class="view-btn" data-category="cancelled"
+                                data-target="#appointment-modal-container-id">View</button>
                         </div>
                     </div>
                 </div>
@@ -114,40 +117,36 @@
                                     <th>Main Category</th>
                                     <th>Subcategory</th>
                                     <th>Total</th>
+                                    <th>Action<th>
                                 </tr>
                             </thead>
                             <tbody id="appointment-service-body"></tbody>
-                            <tr>
-                                <td rowspan="2">Periodontics</td>
-                                <td>Oral Prophylaxis</td>
-                                <td>12</td>
-                            </tr>
                         </table>
                     </div>
                 </div>
             </div>
             <div class="col-xxl-6 col-xl-6 col-lg-12 col-md-12 col-sm-12">
-                <div class="appointment-report-graph-container ">
+                <div class="appointment-report-graph-container">
                     <div class="appointment-graph-wrapper">
-                        <div class="appointment-report-graph-title">
+                        <div class="appointment-report-graph-title p-2">
                             <h3>Appointment Report</h3>
                             <div class="appointment-report-graph-p">
                                 <p>Here’s Your appointment Overview—see how the numbers <br>
                                     unfold and grow as we keep your appointments in perfect balance!</p>
                             </div>
                             <div class="month-selector">
-                            <label for="month-select">Select Month:</label>
-                            <select id="month-select">
-                                <option value="2023-09">September 2023 (Last Month)</option>
-                                <option value="2023-10" selected>October 2023 (Current Month)</option>
-                                <!-- Add more options as needed -->
-                            </select>
-                        </div>
+                                <label for="month-select">Select Month:</label>
+                                <select id="month-select">
+                                    <option value="2023-09">September 2023 (Last Month)</option>
+                                    <option value="2023-10">October 2023 (Current Month)</option>
+                                    <!-- Add more options as needed -->
+                                </select>
+                            </div>
                         </div>
 
-                        
 
-                        <div class="appointment-report-graph-wrapper d-flex flex-column">
+
+                        <div class="appointment-report-graph-wrapper">
                             <canvas id="appointment-report-id"></canvas>
                         </div>
                     </div>
@@ -156,3 +155,24 @@
         </div>
     </div>
 </section>
+
+
+<div class="appointment-modal-container" id="appointment-modal-container-id">
+    <div class="appointment-modal-wrapper">
+        <div class="close-modal">
+            <button id="close-modal-btn">&times;</button>
+        </div>
+        <div class="appointment-modal-title">
+            <h3 id="modal-title">Appointment Details</h3>
+        </div>
+        <div class="appointment-modal-table-container">
+            <div class="appointment-modal-table-wrapper">
+                <table class="appointment-report-modal-table" id="appointment-modal-table-id">
+                    <thead id="appointment-report-modal-head">
+                    </thead>
+                    <tbody id="appointment-report-modal-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
