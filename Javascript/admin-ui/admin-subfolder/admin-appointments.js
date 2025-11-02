@@ -253,7 +253,7 @@ if (backBtn) {
             document.getElementById('shared-view-appointments-modal-id').style.display = 'none';
         });
     }
-
+ 
 
     //FOR CLOSING THE MODAL IN THE BUTTON CANCEL
     const addCancelBtn = document.querySelector('.cancel-appointment-btn');  // For Add modal
@@ -272,6 +272,267 @@ if (backBtn) {
             editBtn.classList.remove('active');
         });
     }
+
+
+    //For Table MODAL 
+    // Function to open and populate the modal
+    // Function to open and populate the modal with sample data
+    function openAppointmentModal(type) {
+        const modal = document.getElementById('appointment-card-table-modal-container-id');
+        const title = document.getElementById('appointment-detailed-title-id');
+        const tbody = document.getElementById('appointment-detailed-body-id');
+
+        // Set title based on type (capitalize first letter)
+        title.textContent = `${type.charAt(0).toUpperCase() + type.slice(1)} Appointments`;
+
+        // Clear previous table data and show loading
+        tbody.innerHTML = '<tr><td colspan="6">Loading...</td></tr>';
+
+        // Show modal
+        modal.classList.add('active');
+
+        // Simulate fetch delay (optional, for realism)
+
+        // Sample data (replace with real fetch later)
+        const allAppointments = [
+            {
+                mainCategory: 'Dental Checkup',
+                subcategory: 'Routine',
+                patientName: 'John Doe',
+                patientID: 'P001',
+                dentist: 'Dr. Smith',
+                date: '2023-10-01',
+                type: 'upcoming'
+            },
+            {
+                mainCategory: 'Cleaning',
+                subcategory: 'Deep Clean',
+                patientName: 'Jane Smith',
+                patientID: 'P002',
+                dentist: 'Dr. Lee',
+                date: '2023-10-02',
+                type: 'pending'
+            },
+            {
+                mainCategory: 'Filling',
+                subcategory: 'Composite',
+                patientName: 'Bob Johnson',
+                patientID: 'P003',
+                dentist: 'Dr. Kim',
+                date: '2023-10-03',
+                type: 'cancelled'
+            },
+            {
+                mainCategory: 'Consultation',
+                subcategory: 'Initial',
+                patientName: 'Alice Brown',
+                patientID: 'P004',
+                dentist: 'Dr. Patel',
+                date: '2023-10-04',
+                type: 'upcoming'
+            },
+            {
+                mainCategory: 'Surgery',
+                subcategory: 'Extraction',
+                patientName: 'Charlie Wilson',
+                patientID: 'P005',
+                dentist: 'Dr. Gupta',
+                date: '2023-10-05',
+                type: 'pending'
+            },
+            {
+                mainCategory: 'Orthodontics',
+                subcategory: 'Braces',
+                patientName: 'Diana Prince',
+                patientID: 'P006',
+                dentist: 'Dr. Wayne',
+                date: '2023-10-06',
+                type: 'cancelled'
+            }
+        ];
+
+        // Filter appointments by type
+        const appointments = allAppointments.filter(appointment => appointment.type === type);
+
+        // Clear loading message
+        tbody.innerHTML = '';
+
+        if (appointments.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="6">No appointments found.</td></tr>';
+            return;
+        }
+
+        // Populate table rows
+        appointments.forEach(appointment => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${appointment.mainCategory}</td>
+                <td>${appointment.subcategory}</td>
+                <td>${appointment.patientName}</td>
+                <td>${appointment.patientID}</td>
+                <td>${appointment.dentist}</td>
+                <td>${appointment.date}</td>
+            `;
+            tbody.appendChild(row);
+        });
+
+    }
+
+
+
+    // Function to close the modal
+    function closeAppointmentModal() {
+        const modal = document.getElementById('appointment-card-table-modal-container-id');
+        modal.classList.remove('active');
+    }
+
+    // Attach click listeners to all cards
+    const cards = document.querySelectorAll('.title-status-container');
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            const type = card.getAttribute('data-type'); // e.g., "upcoming"
+            openAppointmentModal(type);
+        });
+    });
+
+    // Attach close listener to the close button
+    const closeButton = document.getElementById('appointment-detailed-table-modal-close-button');
+    closeButton.addEventListener('click', closeAppointmentModal);
+
+    // Optional: Close modal on outside click (clicking the overlay)
+    const modal = document.getElementById('appointment-card-table-modal-container-id');
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeAppointmentModal();
+    });
+
+
+
+
+
+
+
+
+
+    // Function to load and populate the appointment type table with sample data
+
+    const tbody = document.getElementById('appointmentType-body');
+
+    // Clear existing rows
+    tbody.innerHTML = '';
+
+    // Sample data
+    const appointments = [
+        {
+            name: 'John Doe',
+            type: 'Checkup',
+            time: '10:00 AM',
+            dentist: 'Dr. Smith',
+            status: 'confirmed'
+        },
+        {
+            name: 'Jane Smith',
+            type: 'Cleaning',
+            time: '11:00 AM',
+            dentist: 'Dr. Lee',
+            status: 'cancelled'
+        },
+        {
+            name: 'Bob Johnson',
+            type: 'Filling',
+            time: '12:00 PM',
+            dentist: 'Dr. Kim',
+            status: 'pending'
+        },
+        {
+            name: 'Alice Brown',
+            type: 'Consultation',
+            time: '1:00 PM',
+            dentist: 'Dr. Patel',
+            status: 'confirmed'
+        },
+        {
+            name: 'Charlie Wilson',
+            type: 'Surgery',
+            time: '2:00 PM',
+            dentist: 'Dr. Gupta',
+            status: 'cancelled'
+        }
+    ];
+
+
+    // Populate table rows
+    appointments.forEach(appointment => {
+        const row = document.createElement('tr');
+
+        let statusClass = '';
+        if (appointment.status.toLowerCase() === 'confirmed') {
+            statusClass = 'status-confirmed';
+        } else if (appointment.status.toLowerCase() === 'cancelled') {
+            statusClass = 'status-cancelled';
+        } else {
+            statusClass = 'status-default';
+        }
+
+        row.innerHTML = `
+            <td>${appointment.name}</td>
+            <td>${appointment.type}</td>
+            <td>${appointment.time}</td>
+            <td>${appointment.dentist}</td>
+            <td class="${statusClass}">${appointment.status}</td>
+        `;
+        tbody.appendChild(row);
+
+        const statusTd = row.querySelector('td:last-child');  // Select the last <td> (status column)
+        statusTd.innerHTML = `<span class="status-badge">${appointment.status}</span>`;
+        const badge = statusTd.querySelector('.status-badge');
+
+
+        if (appointment.status.toLowerCase() === 'confirmed') {
+            statusTd.style.color = 'green';
+            statusTd.style.border = '1px solid green';
+            statusTd.style.borderRadius = '15px';
+            statusTd.style.backgroundColor = '#e6f9e6'; // ✅ light green background
+            statusTd.style.color = 'green';              // text still visible
+            statusTd.style.textAlign = 'center';
+            statusTd.style.display = 'inline-block';
+
+
+        } else if (appointment.status.toLowerCase() === 'cancelled') {
+            statusTd.style.color = 'red';
+            statusTd.style.border = '1px solid red';
+            statusTd.style.borderRadius = '15px';
+            statusTd.style.backgroundColor = '#e44a4a4f'; // ✅ light green background
+            statusTd.style.color = 'red';              // text still visible
+            statusTd.style.textAlign = 'center';
+            statusTd.style.display = 'inline-block';
+        } else {
+            statusTd.style.color = '#6c757d';  // Gray for others
+            statusTd.style.fontWeight = 'normal';
+            statusTd.style.border = '1px solid red';
+            statusTd.style.borderRadius = '15px';
+            statusTd.style.backgroundColor = '#e44a4a4f'; // ✅ light green background
+            statusTd.style.color = 'red';              // text still visible
+            statusTd.style.textAlign = 'center';
+            statusTd.style.display = 'inline-block';
+        }
+
+
+        const tds = row.querySelectorAll('td');
+        for (let i = 0; i < 4; i++) {  // Loop through first 4 (0-indexed: 0=Name, 1=Type, 2=Time, 3=Dentist)
+            tds[i].style.color = '#703803';  // Change to your desired color (e.g., 'red', '#ff0000', etc.)
+            tds[i].style.fontWeight = 'normal';  // Optional: adjust weight
+        }
+    });
+
+
+
 }
+
+
+
+// Call the function on page load (or tie it to an event, e.g., after modal opens)
+
+
+
 
 document.addEventListener("DOMContentLoaded", initAdminAppointments)

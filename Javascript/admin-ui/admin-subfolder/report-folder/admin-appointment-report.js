@@ -301,6 +301,5 @@ closeBtn.addEventListener("click", () => {
 
 
 
-
 }
 document.addEventListener('DOMContentLoaded', initAdminAppointmentReport);

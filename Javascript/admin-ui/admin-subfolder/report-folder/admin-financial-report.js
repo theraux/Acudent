@@ -20,7 +20,7 @@ if (topGrossCtx) {
       responsive: true,
       plugins: {
         legend: {
-          display: true,
+          display: false,
           position: 'bottom',
           labels: { color: '#333', boxWidth: 12 }
         },
@@ -52,7 +52,7 @@ if (lowestRevenueCtx) {
       responsive: true,
       plugins: {
         legend: {
-          display: true,
+          display: false,
           position: 'bottom',
           labels: { color: '#333', boxWidth: 12 }
         },

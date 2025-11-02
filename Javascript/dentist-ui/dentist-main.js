@@ -132,13 +132,13 @@ function initPageScript(pageUrl) {
     }
   }
   if (pageUrl.includes('dentist-appointment-reports.php')) {
-    if (typeof initDentistAppointmentReports === 'function') {
-      initDentistAppointmentReports();
+    if (typeof initDentistAppointmentReport === 'function') {
+      initDentistAppointmentReport();
     } else {
       const script = document.createElement('script');
-      script.src = '../../Javascript/dentist-ui/dentist-subfolder/dentist-appointment-reports.js';
+      script.src = '../../Javascript/dentist-ui/dentist-subfolder/dentist-appointment-report.js';
       script.defer = true;
-      script.onload = () => initDentistAppointmentReports();
+      script.onload = () => initDentistAppointmentReport();
       document.body.appendChild(script);
     }
   }

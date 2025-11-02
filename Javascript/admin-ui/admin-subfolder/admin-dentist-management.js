@@ -24,7 +24,7 @@ function initAdminDentistManagement() {
             // Show selected section
             targetSection.classList.remove('hidden');
 
-            // Update button styles
+            // Update button styles 
             toggleButtons.forEach(b => b.classList.remove('active-tab'));
             btn.classList.add('active-tab');
         });
@@ -70,6 +70,8 @@ function initAdminDentistManagement() {
             }
         });
     });
+
+    
 }
 
 document.addEventListener('DOMContentLoaded', initAdminDentistManagement);
