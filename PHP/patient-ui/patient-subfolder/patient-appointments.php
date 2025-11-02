@@ -8,7 +8,7 @@
                 <h3>Appointments</h3>
             </div>
             <div class="description-header-text">
-                <p>Book your appointment</p>
+                <p>Stay in control of your care — book and manage your appointments easily.</p>
             </div>
         </div>
     </div>
@@ -80,9 +80,6 @@
         <div class="shared-appointment-wrapper">
             <div class="shared-appointment-title-wrapper">
                 <h3>Appointments</h3>
-                <div class="shared-appointment-p">
-                    <p>Need to see your dentist? Schedule an appointment now</p>
-                </div>
             </div>
         </div>
         <div class="shared-appointment-prev-next-month">

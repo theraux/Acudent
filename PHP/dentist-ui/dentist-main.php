@@ -29,6 +29,9 @@ $profileImage = $_SESSION['dentist_image'] ?? '../../Pictures/user-interface/pro
   <link rel="stylesheet" href="../../CSS/dentist-ui/dentist-backup-css/dentist-help.css">
   <link rel="stylesheet" href="../../CSS/dentist-ui/dentist-backup-css/dentist-patient-records-detailed.css">
 
+
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   <!-- Shared CSS -->
   <link rel="stylesheet" href="../../CSS/shared-ui/shared.css">
 

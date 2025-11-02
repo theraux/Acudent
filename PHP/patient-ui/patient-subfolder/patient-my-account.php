@@ -68,7 +68,7 @@
                                     <label for="MiddleName">Gender</label>
                                     <input type="text" id="MiddleName" class="form-control" name="MiddleName"
                                         placeholder="">
-                                </div>
+                                </div> 
 
                                 <div class="col my-account-field">
                                     <label for="Email">Email</label>

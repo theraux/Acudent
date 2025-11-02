@@ -33,6 +33,7 @@ session_start();
     <link rel="stylesheet" href="../../CSS/admin-ui/admin-backup-css/report-folder/admin-inventory-report.css">
     <link rel="stylesheet" href="../../CSS/admin-ui/admin-backup-css/report-folder/admin-financial-report.css">
     <link rel="stylesheet" href="../../CSS/admin-ui/admin-backup-css/report-folder/admin-appointment-report.css">
+    <link rel="stylesheet" href="../../CSS/admin-ui/admin-backup-css/shared-folder-add/admin-add-new.css">
     
 
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

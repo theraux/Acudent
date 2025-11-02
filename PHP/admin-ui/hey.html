@@ -1,184 +1,123 @@
-<section id="appointment-report-main-container-id" class="appointment-report-main-container">
-    <hr class="hr" style="color: #9E5B08;">
-    <div class="wrapper d-flex flex-wrap">
-        <div class="profile-container ">
-            <div class="header-text d-flex flex-row mb-2">
-                <i class="fa-solid fa-book"></i>
-                <h3>Appointment Reports</h3>
-            </div>
-            <div class="description-header-text">
-                <p>See how schedules line up and patient visits stack up as we keep every appointment right on track!
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <div class="appointment-report-container-box mt-3">
-        <div class="appointment-report-overview">
-            <h3>Overview</h3>
+<div class="add-new-modal-container" id="add-new-modal-container-id">
+    <div class="add-new-modal-wrapper">
+        <div class="add-new-close-modal">
+            <button id="add-new-close-modal-btn">&times;</button>
         </div>
 
-        <div class="row row-cols-xxl-3 row-cols-xl-3 row-cols-lg-1 row-cols-md-1 row-cols-sm-1 p-2">
-            <div class="col-xxl-4 col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12">
-                <div class="appointment-report-box-wrapper">
-                    <div class="appointment-report-icon">
-                        <div class="appointment-report-icon-container">
-                            <i class="fa-solid fa-check"></i>
-                        </div>
-                        <div class="appointment-report-box-title d-flex flex-column justify-content-start">
-                            <h4>Completed Appointments</h4>
-                            <h3>100</h3>
-                            <p>This month</p>
-                        </div>
-                        <div class="appointment-report-view-detail d-flex ms-auto">
-                            <button type="button" class="view-btn"
-                                data-target="#appointment-modal-container-id"
-                                data-category="completed">View</button>
-                        </div>
+        <div class="add-new-title">
+            <h3 id="add-new-title-id"></h3>
+        </div>
+
+        <div class="add-new-wrapper-title">
+            <h3>Personal Information</h3>
+        </div>
+        <div class="row row-cols-xxl-2 row-cols-xl-2 row-cols-lg-1 row-cols-md-1 row-cols-sm-1 row-cols-1 mt-3 w-100">
+            <div class="col-xxl-6 col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="add-new-wrapper">
+
+                    <div class="form-floating">
+                        <input type="text" id="LastName" class="form-control" name="LastName" placeholder="Last Name"
+                            required>
+                        <label for="Last Name">Last Name<span class="required">*</span></label>
                     </div>
                 </div>
             </div>
-            <div class="col-xxl-4 col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12">
-                <div class="appointment-report-box-wrapper">
-                    <div class="appointment-report-icon">
-                        <div class="appointment-report-icon-container">
-                            <i class="fa-solid fa-xmark"></i>
-                        </div>
-                        <div class="appointment-report-box-title d-flex flex-column justify-content-start">
-                            <h4>No Show Appointments</h4>
-                            <h3>5</h3>
-                            <p>This month</p>
-                        </div>
-                        <div class="appointment-report-view-detail d-flex ms-auto">
-                            <button type="button" class="view-btn" data-category="no-show"
-                                data-target="#appointment-modal-container-id">View</button>
-                        </div>
+            <div class="col-xxl-6 col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="add-new-wrapper">
+                    <div class="form-floating">
+                        <input type="text" id="FirstName" class="form-control" name="FirstName" placeholder="First Name"
+                            required>
+                        <label for="First Name">First Name<span class="required">*</span></label>
                     </div>
                 </div>
             </div>
-            <div class="col-xxl-4 col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12">
-                <div class="appointment-report-box-wrapper">
-                    <div class="appointment-report-icon">
-                        <div class="appointment-report-icon-container">
-                            <i class="fa-solid fa-ban"></i>
-                        </div>
-                        <div class="appointment-report-box-title d-flex flex-column justify-content-start">
-                            <h4>Cancelled Appointments</h4>
-                            <h3>3</h3>
-                            <p>This month</p>
-                        </div>
-                        <div class="appointment-report-view-detail d-flex ms-auto">
-                            <button type="button" class="view-btn" data-category="cancelled"
-                                data-target="#appointment-modal-container-id">View</button>
-                        </div>
+            <div class="col-xxl-6 col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="add-new-wrapper">
+                    <div class="form-floating">
+                        <input type="email" id="Email" class="form-control" name="Email" placeholder="Email" required>
+                        <label for="Email">Email<span class="required">*</span></label>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div class="appointment-wrapper-container mt-5 border pt-2">
-        <div class="container-tools px-3">
-            <div class="container-tool-wrapper d-flex justify-content-space-between align-items-center gap-3 flex-wrap">
-
-
-                <div class="monthly-wrapper-caret-down">
-                    <button type="button" class="inventory-management-caret-button" id="appointment-report-caret-btn"
-                        title="Weekly Report" data-bs-toggle="dropdown" aria-expanded="false">
-                        <span class="selected-period">Select Period</span>
-                        <i class="fa-solid fa-caret-down"></i>
-                    </button>
-
-                    <ul class="monthly-dropdown" id="admin-financoal-dropdown-id">
-                        <li><a class="monthly-dropdown-item" href="#">Weekly</a></li>
-                        <li><a class="monthly-dropdown-item" href="#">Monthly</a></li>
-                        <li><a class="monthly-dropdown-item" href="#">Yearly</a></li>
-                    </ul>
+            <div class="col-xxl-6 col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="add-new-wrapper">
+                    <div class="form-floating">
+                        <input type="text" id="Age" class="form-control" name="Age" placeholder="Age" required>
+                        <label for="Age">Age<span class="required">*</span></label>
+                    </div>
                 </div>
+            </div>
+            <div class="col-xxl-6 col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="add-new-wrapper">
+                    <div class="form-floating">
+                        <input type="text" id="Birthdate" class="form-control" name="Birthdate" placeholder="Birthdate"
+                            required>
+                        <label for="Birthdate">Birthdate<span class="required">*</span></label>
+                    </div>
+                </div>
+            </div>
 
-                <div class="search-wrapper-inventory">
-                    <input type="text" name="inventory-searchbar" class="inventory-searchbar form-control"
-                        placeholder="Search">
-                    <i class="fas fa-search"></i>
+            <div class="col-xxl-6 col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="add-new-wrapper">
+                    <div class="form-floating">
+                        <input type="tel" id="PhoneNumber" class="form-control" name="PhoneNumber"
+                            placeholder="Phone Number" required>
+                        <label for="Phone Number">Phone Number<span class="required">*</span></label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="form-floating">
+                    <select id="specialization-id" name="Specialization" required>
+                        <option value="" disabled selected></option>
+                        <option value="Periodontics">Periodontics</option>
+                        <option value="Cosmetic Care">Cosmetic Care</option>
+                        <option value="Orthodontics">Orthodontics</option>
+                        <option value="Prosthodontics">Prosthodontics</option>
+                        <option value="Surgical Treatment">Surgical Treatment</option>
+                    </select>
+                    <label for="specialization-id"><span class="required">*</span>Specialization</label>
                 </div>
             </div>
         </div>
+        <hr class="hr1 mt-0 mb-4">
 
-        <hr class="mt-2 mb-4" style="color: #9E5B08;">
-
-
-
+        <div class="add-new-wrapper-title">
+            <h3>Log In Credentials</h3>
+        </div>
         <div class="row row-cols-xxl-2 row-cols-xl-2 row-cols-lg-1 row-cols-md-1 row-cols-sm-1 row-cols-1">
-            <div class="col-xxl-6 col-xl-6 col-lg-12 col-md-12 col-sm-12">
-                <div class="appointment-service-table-container px-3 pt-2 pb-5">
-                    <div class="appointment-service-table-wrapper w-100 h-100">
-                        <table class="appointmet-service-table" id="appointment-service-table-id">
-                            <thead>
-                                <tr>
-                                    <th>Main Category</th>
-                                    <th>Subcategory</th>
-                                    <th>Total</th>
-                                </tr>
-                            </thead>
-                            <tbody id="appointment-service-body"></tbody>
-                        </table>
+            <div class="col-xxl-6 col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="add-new-wrapper">
+
+                    <div class="form-floating">
+                        <input type="text" id="Username" class="form-control" name="Username" placeholder="Username"
+                            required>
+                        <label for="username">User Name<span class="required">*</span></label>
                     </div>
                 </div>
             </div>
-            <div class="col-xxl-6 col-xl-6 col-lg-12 col-md-12 col-sm-12">
-                <div class="appointment-report-graph-container">
-                    <div class="appointment-graph-wrapper">
-                        <div class="appointment-report-graph-title p-2">
-                            <h3>Appointment Report</h3>
-                            <div class="appointment-report-graph-p">
-                                <p>Here’s Your appointment Overview—see how the numbers <br>
-                                    unfold and grow as we keep your appointments in perfect balance!</p>
-                            </div>
-                            <div class="month-selector">
-                                <label for="month-select">Select Month:</label>
-                                <select id="month-select">
-                                    <option value="2023-09">September 2023 (Last Month)</option>
-                                    <option value="2023-10">October 2023 (Current Month)</option>
-                                    <!-- Add more options as needed -->
-                                </select>
-                            </div>
-                        </div>
 
+            <div class="col-xxl-6 col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="add-new-wrapper">
+                    <div class="form-floating">
+                        <input type="password" id="Password" class="form-control" name="Password" placeholder="Password"
+                            required>
+                        <label for="password">Password<span class="required">*</span></label>
+                    </div>
+                </div>
+            </div>
 
-
-                        <div class="appointment-report-graph-wrapper">
-                            <canvas id="appointment-report-id"></canvas>
-                        </div>
+            <div class="col-xxl-6 col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="add-new-wrapper">
+                    <div class="form-floating">
+                        <input type="password" id="ConfirmPassword" class="form-control" name="ConfirmPassword"
+                            placeholder="Confirm Password" required>
+                        <label for="Confirm Password">Confirm Password<span class="required">*</span></label>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
 
-
-<div class="appointment-modal-container" id="appointment-modal-container-id">
-    <div class="appointment-modal-wrapper">
-        <div class="close-modal">
-            <button id="close-modal-btn">&times;</button>
-        </div>
-        <div class="appointment-modal-title">
-            <h3 id="modal-title">Appointment Details</h3>
-        </div>
-        <div class="appointment-modal-table-container">
-            <table id="appointment-modal-table">
-                <thead>
-                    <tr>
-                        <td>Main Category</td>
-                        <td>Subcategory</td>
-                        <td>Name</td>
-                        <td>Patient ID</td>
-                        <td>Dentist</td>
-                        <td>Date</td>
-                    </tr>
-                </thead>
-                <tbody id="appointment-modal-body"></tbody>
-            </table>
-        </div>
     </div>
 </div>

@@ -12,7 +12,7 @@
             </div>
         </div>
         <div class="add-user-btn-container ms-auto">
-            <button class="add-user-btn"><i class="fa-solid fa-user-plus"> </i> Add New Dentist</button>
+            <button class="add-user-btn" data-target="dentist"><i class="fa-solid fa-user-plus"> </i> Add New Dentist</button>
         </div>
     </div>
 
@@ -132,3 +132,4 @@
         </div>
     </div>
 </div>
+

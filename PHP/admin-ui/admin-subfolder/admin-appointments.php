@@ -1,53 +1,56 @@
 <section id="admin-appointment-scheduler-page-id" class="appointment-container">
-     <hr class="hr" style="color: #9E5B08;">
+    <hr class="hr" style="color: #9E5B08;">
     <div class="appointment">
 
         <div class="wrapper d-flex flex-wrap">
             <div class="profile-container ">
                 <div class="header-text d-flex flex-row mb-2">
-                     <i class="fa-solid fa-calendar-check"></i>
+                    <i class="fa-solid fa-calendar-check"></i>
                     <h3>Appointments</h3>
                 </div>
                 <div class="description-header-text">
                     <p>Stay on top of every appointment, manage and keep track of what's ahead</p>
                 </div>
             </div>
-        </div> 
+        </div>
 
 
         <div class="row appointment-wrapper row-cols-2">
             <div class="col-4">
-                <div class="title-status-container">
+                <div class="title-status-container" data-target="appointment-card-table-modal-container-id"
+                data-type="upcoming">
                     <div class="appointment-overview-wrapper d-flex align-items-center">
                         <div class="appointment-overview-wrapper-icon bg-primary">
-                        <span><i class="fa-solid fa-calendar-days"></i></span>
+                            <span><i class="fa-solid fa-calendar-days"></i></span>
                         </div>
                         <div class="appointment-overview">
                             <p>Upcoming</p>
-                            <p><span id="patients-completed" class="patient-overview-p">24</span></p>
+                            <p><span id="patient-completed" class="patient-overview-p"></span></p>
                         </div>
                     </div>
                 </div>
 
-                <div class="title-status-container">
+                <div class="title-status-container" data-target="appointment-card-table-modal-container-id"
+                data-type="pending">
                     <div class="appointment-overview-wrapper d-flex align-items-center">
                         <div class="appointment-overview-wrapper-icon bg-warning">
-                        <span><i class="fa-solid fa-calendar"></i></span>
+                            <span><i class="fa-solid fa-calendar"></i></span>
                         </div>
                         <div class="appointment-overview">
                             <p>Pending</p>
-                            <p><span id="patient-thismonth" class="patient-overview-p">24</span></p>
+                            <p><span id="patient-pending" class="patient-overview-p"></span></p>
                         </div>
                     </div>
                 </div>
-                <div class="title-status-container">
+                <div class="title-status-container" data-target="appointment-card-table-modal-container-id"
+                data-type="cancelled">
                     <div class="appointment-overview-wrapper d-flex align-items-center">
                         <div class="appointment-overview-wrapper-icon bg-danger">
-                        <span><i class="fa-solid fa-calendar-xmark"></i></span>
+                            <span><i class="fa-solid fa-calendar-xmark"></i></span>
                         </div>
                         <div class="appointment-overview">
                             <p>Cancelled</p>
-                            <p><span id="patient-cancelled" class="patient-overview-p">24</span></p>
+                            <p><span id="patient-cancelled" class="patient-overview-p"></span></p>
                         </div>
                     </div>
                 </div>
@@ -67,30 +70,7 @@
                             </tr>
                         </thead>
                         <tbody id="appointmentType-body">
-                            <tr>
-                                <td>John Doedahdjabjsbdjsabajdd</td>
-                                <td>Cleaningdasndkanskdans</td>
-                                <td>10:00 AMflmalwfmalsdlslmlm</td>
-                                <td>Dr. Smith</td>
-                                <td><span data-id="status-confirmed">Confirmed</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>John Doedahdjabjsbdjsabajdd</td>
-                                <td>Cleaningdasndkanskdans</td>
-                                <td>10:00 AMflmalwfmalsdlslmlm</td>
-                                <td>Dr. Smith</td>
-                                <td><span id="status-confirmed">Confirmed</span></td>
-                            </tr>
-
-                            <tr>
-                                <td>John Doedahdjabjsbdjsabajdd</td>
-                                <td>Cleaningdasndkanskdans</td>
-                                <td>10:00 AMflmalwfmalsdlslmlm</td>
-                                <td>Dr. Smith</td>
-                                <td><span id="status-confirmed">Confirmed</span></td>
-                            </tr>
-                        </tbody>
+                    </tbody>
                 </div>
                 </table>
             </div>
@@ -98,31 +78,32 @@
     </div>
 </section>
 
- 
+
 
 <!---------Calendar-------------->
 <section class="shared-calendar-appointment-section" id="calendar-appointments-section">
-      <div class="shared-calendar-appointments-wrapper">
+    <div class="shared-calendar-appointments-wrapper">
         <div class="shared-appointment-wrapper">
             <div class="shared-appointment-title-wrapper">
                 <h2>Appointment Calendar</h2>
             </div>
         </div>
         <div class="shared-appointment-prev-next-month">
-            <button onclick="Adminprevmonth()" class="btn-month" id="btn-previous-month"><i class="fa-solid fa-chevron-left"></i></button>  <!-- Updated onclick -->
+            <button onclick="Adminprevmonth()" class="btn-month" id="btn-previous-month"><i
+                    class="fa-solid fa-chevron-left"></i></button> <!-- Updated onclick -->
             <h3 id="month-year"></h3>
-            <button onclick="Adminnextmonth()" class="btn-month" id="btn-next-month"><i class="fa-solid fa-chevron-right"></i></button>  <!-- Updated onclick -->
+            <button onclick="Adminnextmonth()" class="btn-month" id="btn-next-month"><i
+                    class="fa-solid fa-chevron-right"></i></button> <!-- Updated onclick -->
             <div class="shared-edit-scheduler">
                 <button class="shared-edit-scheduler-btn" title="edit an appointment" data-target="">Edit</button>
                 <div class="shared-appointment-edit-schedule">
-                    <button class="shared-edit-sched" id="edit-schedule" title="Add an Appointment" >Add</button>
+                    <button class="shared-edit-sched" id="edit-schedule" title="Add an Appointment">Add</button>
                 </div>
             </div>
         </div>
 
 
-        <div class="row shared-calendar-appointments-container-row row-cols-1"
-            id="calendar-appointments-container">
+        <div class="row shared-calendar-appointments-container-row row-cols-1" id="calendar-appointments-container">
             <!-- Appointment items will be dynamically added here -->
             <div class="col name-of-the-day">
                 <div class="row row-cols-7">
@@ -379,3 +360,33 @@
             </div>
         </div>
 </section>
+
+
+<div class="appointment-detailed-table-modal-container" id="appointment-card-table-modal-container-id">
+    <div class="appointment-detailed-modal-wrapper">
+        <div class="appointment-detailed-table-modal-close">
+            <button id="appointment-detailed-table-modal-close-button">&times;</button>
+        </div>
+        <div class="appointment-detailed-title">
+            <h3 id="appointment-detailed-title-id"></h3>
+        </div>
+
+        <div class="appointment-detailed-table-container">
+            <div class="appointment-detailed-table-wrapper w-100 h-100">
+                <table class="appointment-detailed-table" id="appointment-detailed-table-id">
+                    <thead>
+                        <tr>
+                            <th>Main Category</th>
+                            <th>Subcategory</th>
+                            <th>Patient Name</th>
+                            <th>Patient ID</th>
+                            <th>Dentist</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="appointment-detailed-body-id"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

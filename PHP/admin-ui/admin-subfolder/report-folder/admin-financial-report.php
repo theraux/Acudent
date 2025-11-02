@@ -30,13 +30,13 @@
                             <div class="financial-report-icon-container bg-success">
                                 <i class="fa-solid fa-ranking-star"></i>
                             </div>
-                            <div class="financial-report-list">
-                                <ul class="report-list">
-                                    <li>Orthodontics</li>
-                                    <li>Cleaning</li>
-                                    <li>Filling</li>
-                                </ul>
-                            </div>
+                                <div class="financial-report-list">
+                                    <ul class="report-list">
+                                        <li>Orthodontics</li>
+                                        <li>Cleaning</li>
+                                        <li>Filling</li>
+                                    </ul>
+                                </div>
                         </div>
 
                         <div class="financial-report-metrics ms-auto">
