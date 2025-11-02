@@ -53,9 +53,12 @@
   padding: 15px 10px 20px 30px;
 }
 
-.shared-appointment-title-wrapper {
+.shared-appointment-title-wrapper h3{
   color: var(--color-text);
-
+  font-size: 1.5rem;
+}
+#patient-month-year{
+  font-size: 1rem;
 }
 
 .shared-calendar-appointments-wrapper {

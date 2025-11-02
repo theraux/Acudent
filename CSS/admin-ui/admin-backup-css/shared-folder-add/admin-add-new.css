@@ -1,0 +1,136 @@
+:root {
+  --color-primary: #F5E3CD;
+  --color-secondary: #FEF3E7;
+  --color-secondary2: #fcf7f2;
+  --color-tertiary: #9E5B08;
+  --color-text: #703803;
+  --color-text2: #502803;
+
+}
+
+.add-new-modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.add-new-modal-container.active {
+  display: flex;
+}
+
+.add-new-modal-wrapper {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 80%;
+  height: 660px;
+  max-width: 900px;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.add-new-close-modal {
+  position: absolute;
+  right: 15px;
+  top: 8px;
+}
+
+.add-new-close-modal button {
+  border: none;
+  font-size: 2rem;
+  color: var(--color-text);
+}
+
+.add-new-close-modal button:hover {
+  color: red;
+}
+
+
+/* Container */
+.add-new-container {
+  width: 100%;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.add-new-wrapper {
+  width: 100%;
+}
+
+.form-floating {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+
+/* Label */
+.form-floating label {
+  color: #502c00;
+  font-size: clamp(1rem, 2vw, 1rem);
+}
+
+.form-floating input,
+.form-floating label .form-floating:placeholder-shown {
+  width: 100%;
+  padding: 0.5rem;
+  color: var(--color-text);
+  border: 1px solid #502c0049;
+  border-radius: 5px !important;
+}
+
+.form-control:focus {
+  border-color: #8B4513;
+  box-shadow: 0 0 4px rgba(139, 69, 19, 0.5);
+  outline: none;
+}
+
+.form-floating select {
+  width: 100%;
+  padding: 0.5rem;
+  color: var(--color-text);
+  border: 1px solid #502c0049;
+  border-radius: 5px !important;
+  height: 60px;
+}
+
+
+.add-new-wrapper-title h3 {
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+.add-new-button {
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.add-new-button button {
+  width: 80px;
+  border: 1px solid;
+}
+#add-new-btn-id{
+  background-color: green;
+  color: var(--color-secondary2);
+  padding: 1px;
+  border-radius: 5px;
+}
+.add-new-cancel-btn button{
+  background-color: red;
+  color: var(--color-secondary2);
+  padding: 1px;
+  border-radius: 5px;
+}
+#add-new-btn-id:hover,
+.add-new-cancel-btn button:hover{
+  background-color: var(--color-primary);
+  color: var(--color-text);
+}
